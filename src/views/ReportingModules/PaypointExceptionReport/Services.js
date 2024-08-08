@@ -1,0 +1,47 @@
+import { CommonGet, CommonPost } from '../../../helpers/HttpClient';
+
+export default {
+  getAllGroups,
+  getEstateDetailsByGroupID,
+  GetPaypointExceptionDetails
+};
+
+async function getAllGroups() {
+  let response = await CommonGet('/api/Group/GetAllGroups');
+  let groupArray = [];
+  for (let item of Object.entries(response.data)) {
+    if (item[1]["isActive"] === true) {
+      groupArray[item[1]["groupID"]] = item[1]["groupName"];
+    }
+  }
+  return groupArray;
+};
+
+async function getEstateDetailsByGroupID(groupID) {
+  let response = await CommonGet('/api/Estate/getEstateDetailsByGroupID', "groupID=" + parseInt(groupID));
+  let estateArray = [];
+  for (let item of Object.entries(response.data)) {
+    estateArray[item[1]["estateID"]] = item[1]["estateName"];
+  }
+  return estateArray;
+};
+
+async function GetPaypointExceptionDetails(model) {
+  const response = await CommonPost('/api/PaypointExceptionReport/GetPaypointExceptionDetails', null, model)
+  return response;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,13 @@
+/* CustomDropdownStyles.css */
+
+/* Target the option items */
+.react-multiple-select-dropdown-lite__option {
+  color: red; /* Change the font color as needed */
+  background-color: lightgray; /* Change the background color as needed */
+}
+
+/* Target the selected option items */
+.react-multiple-select-dropdown-lite__selected {
+  color: white; /* Change the font color of the selected options */
+  background-color: blue; /* Change the background color of the selected options */
+}

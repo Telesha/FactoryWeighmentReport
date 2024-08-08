@@ -1,0 +1,14 @@
+{
+    "apidomain": "http://localhost:5000",
+    "reactDomain": "http://localhost:3000",
+    "screenConfigurations": [
+        {
+            "screenCode": "MANUALLEAFUPLOAD",
+            "configurations": [
+                {
+                    "defaultCollectionTypeID": "01"
+                }
+            ]
+        }
+    ]
+}
